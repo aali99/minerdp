@@ -67,9 +67,10 @@ sudo go get -u github.com/ethicalhackingplayground/bxss
 sudo git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/; httpx -version
 sudo cd $GOPATH/src/github.com/OWASP/Amass
 sudo go install ./...
-
+sleep 1
+apt install screen 
 echo "[*] INSTALLING RUSTSCAN..."
-
+cd ~
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 dpkg -i rustscan_2.0.1_amd64.deb
 
@@ -80,7 +81,12 @@ cd dalfox
 go install
 go build
 
-git clone https://github.com/chvancooten/BugBountyScanner
+sudo cd ~/
+sudo git clone https://github.com/chvancooten/BugBountyScanner
+cd ~/BugBountyScanner
+sudo wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
+sudo rm -rf .env.example
+sudo echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
 ### Nuclei (Workaround -https://github.com/projectdiscovery/nuclei/issues/291)
 cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
 git clone -q https://github.com/projectdiscovery/nuclei.git
