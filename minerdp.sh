@@ -17,7 +17,17 @@ sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 
 
+} &> /dev/null &&
+printf "\nSetup Complete " >&2 ||
+printf "\nError Occured " >&2
+printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debian Linux And Paste Down\n'
+read -p "Paste Here: " CRP
+su -c """$CRP"""
+printf 'Check https://remotedesktop.google.com/access/ \n\n'
 
+if sudo apt-get upgrade &> /dev/null
+then
+    
 toolsDir="/opt"
 echo "[*] INSTALLING DEPENDENCIES IN \"$toolsDir\"..."
 
@@ -89,16 +99,6 @@ sudo cp "$toolsDir"/Gf-Patterns/*.json ~/.gf
 sudo pip3 install telegram-send
 
 sudo echo "[*] SETUP FINISHED."
-
-} &> /dev/null &&
-printf "\nSetup Complete " >&2 ||
-printf "\nError Occured " >&2
-printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debian Linux And Paste Down\n'
-read -p "Paste Here: " CRP
-su -c """$CRP"""
-printf 'Check https://remotedesktop.google.com/access/ \n\n'
-if sudo apt-get upgrade &> /dev/null
-then
     printf "\n\nUpgrade Completed " >&2
 else
     printf "\n\nError Occured " >&2
