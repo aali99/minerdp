@@ -28,10 +28,8 @@ printf 'Check https://remotedesktop.google.com/access/ \n\n'
 if sudo apt-get upgrade &> /dev/null
 then
     
-toolsDir="/opt"
-echo "[*] INSTALLING DEPENDENCIES IN \"$toolsDir\"..."
 
-sudo mkdir -p "$toolsDir"
+sudo mkdir -p /opt
 
 sudo apt install -y phantomjs xvfb dnsutils nmap
 
@@ -80,21 +78,21 @@ sudo wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
 sudo rm -rf .env.example
 sudo echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
 ### Nuclei (Workaround -https://github.com/projectdiscovery/nuclei/issues/291)
-sudo cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
+sudo cd /opt || { echo "Something went wrong"; exit 1; }
 sudo git clone -q https://github.com/projectdiscovery/nuclei.git
 sudo cd nuclei/v2/cmd/nuclei/ || { echo "Something went wrong"; exit 1; }
 sudo go build
 sudo mv nuclei /usr/local/bin/
 
 ### Nuclei templates
-sudo cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
+sudo cd /opt || { echo "Something went wrong"; exit 1; }
 sudo git clone -q https://github.com/projectdiscovery/nuclei-templates.git
 sudo nuclei --update-templates 
 ### Gf-Patterns
-sudo cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
+sudo cd /opt || { echo "Something went wrong"; exit 1; }
 sudo git clone -q https://github.com/1ndianl33t/Gf-Patterns
 sudo mkdir ~/.gf
-sudo cp "$toolsDir"/Gf-Patterns/*.json ~/.gf
+sudo cp /opt/Gf-Patterns/*.json ~/.gf
 
 sudo pip3 install telegram-send
 
