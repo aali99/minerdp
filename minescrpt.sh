@@ -45,11 +45,14 @@ apt install -y phantomjs xvfb dnsutils nmap
 sleep 3
 
 echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
-sudo wget -q -O - https://git.io/vQhTU | bash
-sudo sleep 5
-su -c source ~/.bashrc
-su -c source ~/\.bashrc
-
+#sudo wget -q -O - https://git.io/vQhTU | bash
+#sudo sleep 5
+#su -c source ~/.bashrc
+#su -c source ~/\.bashrc
+cd /usr/local
+wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
 go get github.com/jaeles-project/jaeles
 go get -u github.com/KathanP19/Gxss
 go get -u github.com/lc/gau
