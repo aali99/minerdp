@@ -49,10 +49,10 @@ echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
 #sudo sleep 5
 #su -c source ~/.bashrc
 #su -c source ~/\.bashrc
-cd /usr/local
-wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+#cd /usr/local
+#wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+#tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
+#export PATH=$PATH:/usr/local/go/bin
 go get github.com/jaeles-project/jaeles
 go get -u github.com/KathanP19/Gxss
 go get -u github.com/lc/gau
@@ -89,6 +89,8 @@ sleep 3
 
 cd ~/
 git clone https://github.com/aali99/scrpt
+cd ~/scrpt
+cp raftseclist.txt ~/
 git clone https://github.com/chvancooten/BugBountyScanner
 cd ~/BugBountyScanner/
 wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
@@ -116,6 +118,7 @@ pip3 install telegram-send
 
 echo "[*] SETUP FINISHED."
 
+screen -S hunt
 
 #sameh101010x
 #-1001324393196
