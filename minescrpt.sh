@@ -44,29 +44,23 @@ apt install -y phantomjs xvfb dnsutils nmap
 
 
 echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
-sudo wget -q -O - https://git.io/vQhTU | bash
-sudo sleep 2
-sudo source ~/.bashrc
-sudo cd /usr/local
-sudo wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
-sudo export PATH=$PATH:/usr/local/go/bin
-sudo go get github.com/jaeles-project/jaeles
-sudo go get -u github.com/KathanP19/Gxss
-sudo go get -u github.com/lc/gau
-sudo go get -u github.com/tomnomnom/gf
-sudo go get -u github.com/jaeles-project/gospider
-sudo go get -u github.com/projectdiscovery/httpx/cmd/httpx
-sudo go get -u github.com/tomnomnom/qsreplace
-sudo go get -u github.com/haccer/subjack
-sudo go get -u github.com/tomnomnom/assetfinder
-sudo go get github.com/hakluke/hakrawler
-sudo go get -u github.com/OWASP/Amass/v3/...
-sudo go get -u github.com/ffuf/ffuf
-sudo go get -u github.com/ethicalhackingplayground/bxss
-sudo git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/; httpx -version
-sudo cd $GOPATH/src/github.com/OWASP/Amass
-sudo go install ./...
+
+go get github.com/jaeles-project/jaeles
+go get -u github.com/KathanP19/Gxss
+go get -u github.com/lc/gau
+go get -u github.com/tomnomnom/gf
+go get -u github.com/jaeles-project/gospider
+go get -u github.com/projectdiscovery/httpx/cmd/httpx
+go get -u github.com/tomnomnom/qsreplace
+go get -u github.com/haccer/subjack
+go get -u github.com/tomnomnom/assetfinder
+go get github.com/hakluke/hakrawler
+go get -u github.com/OWASP/Amass/v3/...
+go get -u github.com/ffuf/ffuf
+go get -u github.com/ethicalhackingplayground/bxss
+git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/; httpx -version
+cd $GOPATH/src/github.com/OWASP/Amass
+go install ./...
 sleep 1
 apt install screen 
 echo "[*] INSTALLING RUSTSCAN..."
@@ -82,6 +76,7 @@ go install
 go build
 
 sudo cd ~/
+git clone https://github.com/aali99/scrpt
 sudo git clone https://github.com/chvancooten/BugBountyScanner
 cd ~/BugBountyScanner
 sudo wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
