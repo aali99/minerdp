@@ -42,8 +42,13 @@ mkdir -p "$toolsDir"
 apt install -y phantomjs xvfb dnsutils nmap
 
 
+sleep 3
 
 echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
+sudo wget -q -O - https://git.io/vQhTU | bash
+sudo sleep 5
+su -c source ~/.bashrc
+su -c source ~/\.bashrc
 
 go get github.com/jaeles-project/jaeles
 go get -u github.com/KathanP19/Gxss
@@ -68,6 +73,8 @@ cd ~
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 dpkg -i rustscan_2.0.1_amd64.deb
 
+sleep 3
+
 echo "[*] INSTALLING GIT DEPENDENCIES..."
 
 git clone https://github.com/hahwul/dalfox
@@ -75,14 +82,17 @@ cd dalfox
 go install
 go build
 
-sudo cd ~/
+sleep 3
+
+cd ~/
 git clone https://github.com/aali99/scrpt
-sudo git clone https://github.com/chvancooten/BugBountyScanner
-cd ~/BugBountyScanner
-sudo wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
-sudo rm -rf .env.example
-sudo echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
+git clone https://github.com/chvancooten/BugBountyScanner
+cd ~/BugBountyScanner/
+wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
+rm -rf .env.example
+echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
 ### Nuclei (Workaround -https://github.com/projectdiscovery/nuclei/issues/291)
+sleep 2
 cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
 git clone -q https://github.com/projectdiscovery/nuclei.git
 cd nuclei/v2/cmd/nuclei/ || { echo "Something went wrong"; exit 1; }
