@@ -96,6 +96,8 @@ cd ~/BugBountyScanner/
 wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
 rm -rf .env.example
 echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
+cp ~/scrpt/ghgh.sh ./
+chmod +x ghgh.sh
 ### Nuclei (Workaround -https://github.com/projectdiscovery/nuclei/issues/291)
 sleep 2
 cd "$toolsDir" || { echo "Something went wrong"; exit 1; }
