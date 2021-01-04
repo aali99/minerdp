@@ -57,22 +57,24 @@ go get -u github.com/tomnomnom/anew
 go get -v github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
 go get github.com/jaeles-project/jaeles
 jaeles config init
+sleep 2
 go get -u github.com/KathanP19/Gxss
 go get -u github.com/lc/gau
 go get -u github.com/tomnomnom/gf
 go get -u github.com/jaeles-project/gospider
-go get -u github.com/projectdiscovery/httpx/cmd/httpx
 go get -u github.com/tomnomnom/qsreplace
+sleep 2
 go get -u github.com/haccer/subjack
 go get -u github.com/tomnomnom/assetfinder
 go get github.com/hakluke/hakrawler
-go get -u github.com/OWASP/Amass/v3/...
+sleep 2
 go get -u github.com/ffuf/ffuf
 go get -u github.com/ethicalhackingplayground/bxss
 git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/; httpx -version
 cd $GOPATH/src/github.com/OWASP/Amass
 go install ./...
 sleep 1
+
 apt install screen 
 echo "[*] INSTALLING RUSTSCAN..."
 cd ~
@@ -90,15 +92,18 @@ go build
 
 sleep 3
 
-cd ~/
+cd ~
 git clone https://github.com/aali99/scrpt
 cd ~/scrpt
 cp raftseclist.txt ~/
+cd ~
 git clone https://github.com/chvancooten/BugBountyScanner
+sleep 1
 cd ~/BugBountyScanner/
 wget https://raw.githubusercontent.com/aali99/BugBountyScanner/master/.env
 rm -rf .env.example
-echo "fitbit.com,elastifile.com,spokeo.com" >programs.txt
+echo "fitbit.com,elastifile.com,spokeo.com,asana.biz,asana.plus,app.asana.com,form.asana.com,bina.com,intermune.com,genia.com,roche-applied-science.com,accu-chek.com,coaguchek.com,roche-diagnostics.fr,roche-diagnostics.co.in,roche-diagnostics.com,cobas.com,accu-chekinsulinpumps.com,rocheindia.com,roche.co.uk,lucentisdirect.com,lucentis.com,ariosadx.com,kapabiosystems.com,navify.com,hyperdesign.com,mysugr.com,viewics.com,sparktx.com,clinical-services.net,foundationmedicine.com,foundationmedicine.ph,stratosgenomics.com,roche.com,ventana.com,sameh23.jfrog.com,gene.com
+" >programs.txt
 cp ~/scrpt/ghgh.sh ./
 chmod +x ghgh.sh
 ### Nuclei (Workaround -https://github.com/projectdiscovery/nuclei/issues/291)
