@@ -66,6 +66,7 @@ sleep 2
 go get -u github.com/haccer/subjack
 go get -u github.com/tomnomnom/assetfinder
 go get github.com/hakluke/hakrawler
+go get -u github.com/OWASP/Amass/v3/...
 sleep 2
 go get -u github.com/ffuf/ffuf
 go get -u github.com/ethicalhackingplayground/bxss
@@ -78,6 +79,11 @@ go install ./...
 sleep 1
 
 apt install screen 
+apt-get install jq
+sleep 1
+pip install --upgrade httpie
+pip3 install telegram-send
+sleep 1
 echo "[*] INSTALLING RUSTSCAN..."
 cd ~
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
@@ -126,11 +132,12 @@ git clone -q https://github.com/1ndianl33t/Gf-Patterns
 mkdir ~/.gf
 cp "$toolsDir"/Gf-Patterns/*.json ~/.gf
 
-pip3 install telegram-send
 
 echo "[*] SETUP FINISHED."
 
 screen -S hunt
+
+telegram-send --configure-channel
 
 #sameh101010x
 #-1001324393196
