@@ -54,7 +54,6 @@ echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
 #tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz
 #export PATH=$PATH:/usr/local/go/bin
 go get -u github.com/tomnomnom/anew
-go get -v github.com/dwisiswant0/crlfuzz/cmd/crlfuzz
 go get github.com/jaeles-project/jaeles
 jaeles config init
 sleep 2
@@ -70,6 +69,9 @@ go get github.com/hakluke/hakrawler
 sleep 2
 go get -u github.com/ffuf/ffuf
 go get -u github.com/ethicalhackingplayground/bxss
+cd ~
+git clone https://github.com/dwisiswant0/crlfuzz ; cd crlfuzz/cmd/crlfuzz; go build . ;mv crlfuzz /usr/local/bin
+cd ~
 git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go build; mv httpx /usr/local/bin/; httpx -version
 cd $GOPATH/src/github.com/OWASP/Amass
 go install ./...
