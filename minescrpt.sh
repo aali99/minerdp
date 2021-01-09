@@ -37,7 +37,7 @@ fi
 
 echo "[*] INSTALLING DEPENDENCIES IN \"$toolsDir\"..."
 
-apt update -y
+
 
 mkdir -p "$toolsDir"
 
