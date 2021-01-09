@@ -85,7 +85,7 @@ sleep 1
 apt-get install jq
 sleep 1
 pip install --upgrade httpie
-pip3 install telegram-send
+
 sleep 1
 echo "[*] INSTALLING RUSTSCAN..."
 cd ~
@@ -140,7 +140,6 @@ echo "[*] SETUP FINISHED."
 
 screen -S hunt
 
-telegram-send --configure-channel
 
 
 #-1001324393196
