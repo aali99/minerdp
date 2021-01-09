@@ -37,6 +37,8 @@ fi
 
 echo "[*] INSTALLING DEPENDENCIES IN \"$toolsDir\"..."
 
+apt update -y
+
 mkdir -p "$toolsDir"
 
 apt install -y phantomjs xvfb dnsutils nmap
@@ -79,6 +81,7 @@ go install ./...
 sleep 1
 
 apt install screen 
+sleep 1
 apt-get install jq
 sleep 1
 pip install --upgrade httpie
@@ -139,6 +142,6 @@ screen -S hunt
 
 telegram-send --configure-channel
 
-#sameh101010x
+
 #-1001324393196
 #1448371821:AAHLFabz4VA5QNfcBAtR5JEN3dtbU6s8v8c
