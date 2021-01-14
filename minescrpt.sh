@@ -57,17 +57,20 @@ echo "[*] INSTALLING GO DEPENDENCIES (OUTPUT MAY FREEZE)..."
 #export PATH=$PATH:/usr/local/go/bin
 go get -u github.com/tomnomnom/anew
 GO111MODULE=on go get github.com/jaeles-project/jaeles
+sleep 1
 jaeles config init
-sleep 2
+sleep 1
 go get -u github.com/KathanP19/Gxss
 go get -u github.com/lc/gau
+sleep 1
 go get -u github.com/tomnomnom/gf
 go get -u github.com/jaeles-project/gospider
 go get -u github.com/tomnomnom/qsreplace
-sleep 2
+sleep 1
 go get -u github.com/haccer/subjack
 go get -u github.com/tomnomnom/assetfinder
 go get github.com/hakluke/hakrawler
+sleep 1
 go get -u github.com/OWASP/Amass/v3/...
 sleep 2
 go get -u github.com/ffuf/ffuf
