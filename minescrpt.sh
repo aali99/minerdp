@@ -82,7 +82,7 @@ git clone https://github.com/projectdiscovery/httpx.git; cd httpx/cmd/httpx; go 
 cd $GOPATH/src/github.com/OWASP/Amass
 go install ./...
 sleep 1
-cd ~ ;git clone https://github.com/aali99/Blind-Xss ;cd Blind-Xss;chmod +x Auto-Scan-Xss.py ;mv git .git ;mv gitignore .gitignore ;python3 Auto-Scan-Xss.py
+cd ~ ;git clone https://github.com/aali99/blindxss ;cd blindxss;chmod +x Auto-Scan-Xss.py ;mv git .git ;python3 Auto-Scan-Xss.py
 apt install screen 
 sleep 1
 apt-get install jq
