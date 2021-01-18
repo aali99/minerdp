@@ -95,7 +95,8 @@ cd ~
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 dpkg -i rustscan_2.0.1_amd64.deb
 
-sleep 3
+sleep 2
+wget https://raw.githubusercontent.com/stamparm/DSSS/master/dsss.py ;chmod +x dsss.py
 
 echo "[*] INSTALLING GIT DEPENDENCIES..."
 
